@@ -34,13 +34,12 @@ require_once MODX_CONNECTORS_PATH.'index.php';
 $modx->lexicon->load('migx:default');
 
 //fix for firefox - issue with iframe and form-action
-$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+$action = isset($_REQUEST['action']) ? strtolower($_REQUEST['action']) : '';
 $_REQUEST['action'] = isset($_REQUEST['actionx']) ? $_REQUEST['actionx'] : $action;
 
 /* handle request */
 $miTVCorePath = $modx->getOption('migx.core_path',null,$modx->getOption('core_path').'components/migx/');
 require_once $miTVCorePath.'model/migx/migx.class.php';
-require_once $modx->getOption('core_path').'model/modx/modmanagercontroller.class.php';
 $modx->migx = new Migx($modx);
 $modx->migx->config['configs'] = isset($_REQUEST['configs']) ? $_REQUEST['configs'] : '';
 $modx->migx->config['tvname'] = isset($_REQUEST['tv_name']) ? $_REQUEST['tv_name'] : ''; 

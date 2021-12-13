@@ -1,5 +1,9 @@
 Changelog for MIGX.
 
+MIGX 3.0.0-beta
+==============
+MODX 3 compatibility
+
 MIGX 2.13.0
 ==============
 add snippet migxGetObject and property toPlaceholders
